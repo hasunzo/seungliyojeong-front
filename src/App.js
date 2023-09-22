@@ -1,24 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Route와 Routes 순서 변경
+import TeamSelectionPage from './TeamSelectionPage'; // TeamSelectionPage 컴포넌트 import
+import ProfileInputPage from './ProfileInputPage'; // ProfileInputPage 컴포넌트 import
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<TeamSelectionPage />} />
+        <Route path="/profile" element={<ProfileInputPage />} />
+      </Routes>
+    </Router>
   );
 }
 

@@ -1,0 +1,25 @@
+.floating-element {
+    position: fixed;
+    bottom: 0;
+    width: 80%;
+    height: 2.5rem;
+    border-radius: 2.5rem;
+    background: #FF3D00;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    place-items: center;
+}
+
+.process-btn {
+    color: white;
+    font-size: 80%;
+    font-weight: 700;
+}
+
+@media screen and (min-width: 421px) {
+    .floating-element {
+      position: absolute;
+    }
+  }
