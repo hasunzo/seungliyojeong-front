@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { HiOutlineChevronLeft, HiCheck } from "react-icons/hi";
 import { Link } from 'react-router-dom'; // BrowserRouter 사용하지 않음
+import Layout from './Layout.js'; // Layout 컴포넌트 임포트
 import testImg from './test.jpg'
-import './FloatingButton.css'
-import './App.css';
 
 const TeamSelectionPage = () => {
     const [teams, setTeams] = useState([
@@ -149,40 +148,38 @@ const TeamSelectionPage = () => {
     }
 
     return (
-        <div className='App'>
-            <div className='body'>
-                <div className='wrap'>
-                    <div className='header'>
-                        <div className='navigate'>
-                            <HiOutlineChevronLeft className='custom-icon' />
-                        </div>
-                        <div className='progress'>
-                            <div className='circle checked'>
-                                <span className='number'>1</span>
-                            </div>
-                            <div className='circle'>
-                                <span className='number'>2</span>
-                            </div>
-                        </div>
-                        <div className='title'>
-                            어느 팀을 응원하시나요?
-                        </div>
-                    </div>
-                    <div className='team-list'>
-                        <div className='team-container'>
-                            {renderTeamsInRows()}
-                        </div>
-                    </div>
-                    <Link to="/profile">
-                        <div className="floating-element">
-                            <div className="process-btn">
-                                다음
-                            </div>
-                        </div>
+        <Layout>
+            <div className='header'>
+                <div className='navigate'>
+                    <Link to="/">
+                        <HiOutlineChevronLeft className='custom-icon' />
                     </Link>
                 </div>
+                <div className='progress'>
+                    <div className='circle checked'>
+                        <span className='number'>1</span>
+                    </div>
+                    <div className='circle'>
+                        <span className='number'>2</span>
+                    </div>
+                </div>
+                <div className='title'>
+                    어느 팀을 응원하시나요?
+                </div>
             </div>
-        </div>
+            <div className='team-list'>
+                <div className='team-container'>
+                    {renderTeamsInRows()}
+                </div>
+            </div>
+            <Link to="/profile">
+                <div className="floating-element">
+                    <div className="process-btn">
+                        다음
+                    </div>
+                </div>
+            </Link>
+        </Layout>
     );
 }
 

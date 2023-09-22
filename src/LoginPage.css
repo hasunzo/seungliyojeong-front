@@ -1,0 +1,95 @@
+/* Login.css 파일에 추가 */
+
+.login-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10rem;
+  }
+  
+  .logo-container {
+    text-align: center;
+    margin: 15rem 0 5rem 0;
+  }
+  
+  .app-logo {
+    width: 30%;
+    height: 30%;
+  }
+  
+  .app-description {
+    margin-top: 8px;
+    font-size: 90%;
+    color: #191919;
+  }
+  
+  .social-login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .or-divider {
+    display: flex;
+    align-items: center;
+    margin: 16px 0;
+  }
+  
+  .line {
+    flex-grow: 1;
+    background-color: #ccc;
+    height: 1px;
+    margin: 0 8px;
+  }
+  
+  .or-text {
+    font-size: 14px;
+    color: #ccc;
+  }
+  
+  .social-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  /* 소셜 로그인 버튼 스타일링 */
+  .kakao-button {
+    width: 80%;
+    border-radius: 0.6rem;
+  }
+
+  .naver-button,
+  .google-button {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .kakao-button img,
+  .naver-button img,
+  .google-button img {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .kakao-button {
+    background-color: #ffe500;
+  }
+  
+  .naver-button {
+    background-color: #03c75a;
+  }
+  
+  .google-button {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+  }
+  
+  a {
+    display: contents;
+  }
