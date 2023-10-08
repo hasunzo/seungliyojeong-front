@@ -64,12 +64,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1rem;
+    font-size: 0.8rem;
     margin-top: auto;
     background: #ff3d00;
     border-radius: 2.5rem;
     color: white;
     padding: 0.5rem;
+    font-weight: 700;
 }
 
 .win-rate-trend {

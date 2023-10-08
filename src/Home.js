@@ -5,10 +5,7 @@ import ob from './ob.png'
 import './styles/Home.css'; // Home.css 파일 임포트
 import RecentGames from './RecentGames';
 import WinRateGraph from './WinRateGraph.js';
-
-import { HiHome, HiOutlineHome, HiCalendar, HiOutlineCalendar, HiOutlinePlusSm, HiUser } from "react-icons/hi";
-import { SlGraph } from "react-icons/sl";
-
+import BottomBar from './BottomBar.js';
 
 const Home = () => {
     const [recentGames, setRecentGames] = useState([
@@ -82,23 +79,7 @@ const Home = () => {
                     <div className='div-bottom-btn'>직관 승률 조회</div>
                 </div>
             </div>
-            <div className='menu-bar'>
-                <div className='menu-item'>
-                    <HiHome />
-                </div>
-                <div className='menu-item'>
-                    <HiOutlineCalendar />
-                </div>
-                <div className='menu-item'>
-                    <HiOutlinePlusSm />
-                </div>
-                <div className='menu-item'>
-                    <SlGraph />
-                </div>
-                <div className='menu-item'>
-                    <HiUser />
-                </div>
-            </div>
+            <BottomBar />
         </Layout >
     );
 };
