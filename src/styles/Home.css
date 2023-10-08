@@ -159,9 +159,3 @@
 .game-data {
     font-weight: 700;
 }
-
-@media screen and (min-width: 421px) {
-    .menu-bar {
-      position: absolute;
-    }
-  }

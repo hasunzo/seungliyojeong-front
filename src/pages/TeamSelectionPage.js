@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { HiOutlineChevronLeft, HiCheck } from "react-icons/hi";
 import { Link } from 'react-router-dom'; // BrowserRouter 사용하지 않음
-import Layout from './Layout.js'; // Layout 컴포넌트 임포트
-import testImg from './test.jpg'
-import './styles/TeamSelectionPage.css'
+import Layout from '../Layout.js'; // Layout 컴포넌트 임포트
+import testImg from '../test.jpg'
+import '../styles/TeamSelectionPage.css'
 
 const TeamSelectionPage = () => {
     const [teams, setTeams] = useState([

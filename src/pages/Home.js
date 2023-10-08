@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import Layout from './Layout.js'; // Layout 컴포넌트 임포트
-import testImg from './test.jpg'
-import ob from './ob.png'
-import './styles/Home.css'; // Home.css 파일 임포트
-import RecentGames from './RecentGames';
-import WinRateGraph from './WinRateGraph.js';
-import BottomBar from './BottomBar.js';
+import Layout from '../Layout.js'; // Layout 컴포넌트 임포트
+import testImg from '../test.jpg'
+import ob from '../ob.png'
+import '../styles/Home.css'; // Home.css 파일 임포트
+import RecentGames from '../RecentGames.js';
+import WinRateGraph from '../WinRateGraph.js';
+import BottomBar from '../BottomBar.js';
+import HomeLayout from '../HomeLayout.js';
 
 const Home = () => {
     const [recentGames, setRecentGames] = useState([
@@ -55,7 +56,7 @@ const Home = () => {
         }
     ])
     return (
-        <Layout>
+        <HomeLayout>
             <div className='user-info'>
                 <div className='user-welcome'>
                     <span className='user-name'>김기아</span>님 <br />환영해요!
@@ -80,7 +81,7 @@ const Home = () => {
                 </div>
             </div>
             <BottomBar />
-        </Layout >
+        </HomeLayout>
     );
 };
 

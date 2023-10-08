@@ -1,8 +1,8 @@
 import React from 'react';
-import Layout from './Layout.js'; // Layout 컴포넌트 임포트
-import './styles/LoginPage.css'
-import KakaoLogo from './kakao_login_logo.png'
-import Logo from './logo192.png'
+import Layout from '../Layout.js'; // Layout 컴포넌트 임포트
+import '../styles/LoginPage.css'
+import KakaoLogo from '../kakao_login_logo.png'
+import Logo from '../logo192.png'
 import { Link } from 'react-router-dom';
 
 const LoginPage = () => {

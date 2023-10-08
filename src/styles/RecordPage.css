@@ -1,0 +1,60 @@
+.records-bar {
+    padding: 2rem 1.5rem 2rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.3rem;
+}
+
+.records-month {
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+.content.list-view {
+    padding: 0 2rem;
+}
+
+.record-item {
+    box-shadow: 0px 0px 12px 0px #ececec;
+    border-radius: 10px;
+    background-color: white;
+    padding: 1rem;
+}
+
+.record-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.record-team-info {
+    margin: 1rem 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.info {
+    gap: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.record-contents {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.record-contents img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.contents span {
+    color: #ccc;
+    font-weight: 700;
+}
