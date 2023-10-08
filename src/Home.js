@@ -4,6 +4,7 @@ import testImg from './test.jpg'
 import ob from './ob.png'
 import './styles/Home.css'; // Home.css 파일 임포트
 import RecentGames from './RecentGames';
+import WinRateGraph from './WinRateGraph.js';
 
 import { HiHome, HiOutlineHome, HiCalendar, HiOutlineCalendar, HiOutlinePlusSm, HiUser } from "react-icons/hi";
 import { SlGraph } from "react-icons/sl";
@@ -76,8 +77,9 @@ const Home = () => {
                 <div className='menu-title'>
                     최근 직관 승률 추이
                 </div>
-                <div className='chart-container'>
-                    {/* 승률을 표시하는 그래프 */}
+                <div className='graph-container'>
+                    <WinRateGraph />
+                    <div className='div-bottom-btn'>직관 승률 조회</div>
                 </div>
             </div>
             <div className='menu-bar'>

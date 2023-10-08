@@ -36,7 +36,7 @@ const RecentGameItem = ({ recentGame }) => {
                     {renderRecordResult()}
                 </div>
             </div>
-            <div className="add">
+            <div className="div-bottom-btn">
                 기록하기
             </div>
         </div>
