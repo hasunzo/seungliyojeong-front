@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { HiOutlineChevronLeft } from "react-icons/hi";
-import Layout from './Layout.js'; // Layout 컴포넌트 임포트
-import './ProfileInputPage.css'
+import Layout from './Layout.js'; // Layout 컴포넌트 임포트
+import './styles/ProfileInputPage.css'
 import { Link } from 'react-router-dom';
 
 const ProfileInputPage = () => {
@@ -73,9 +73,11 @@ const ProfileInputPage = () => {
         </div>
       </div>
       <div className="floating-element">
-        <div className="process-btn">
-          가입 완료
-        </div>
+        <Link to="/home">
+          <div className="process-btn">
+            가입 완료
+          </div>
+        </Link>
       </div>
     </Layout>
   );

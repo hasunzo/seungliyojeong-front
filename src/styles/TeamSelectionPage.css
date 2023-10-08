@@ -1,0 +1,79 @@
+.team-list {
+    padding: 1rem;
+    padding-bottom: 5rem;
+}
+
+.team-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.team-row {
+    display: flex;
+    justify-content: space-between;
+    /* 각 팀 박스 사이에 공간을 나눠 배치 */
+    gap: 1rem;
+}
+
+.team {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    min-height: 5rem;
+    position: relative;
+}
+
+.team-name {
+    font-weight: bold;
+    font-size: 80%;
+    white-space: pre-line;
+    color: #ccc;
+}
+
+.check-mark {
+    position: absolute;
+    top: -0.5rem;
+    right: -0.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: #FF3D00;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.team.checked {
+    border: 1px solid #FF3D00;
+}
+
+.team.checked .team-name {
+    color: #FF3D00;
+}
+
+.team-image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 40%;
+    height: 30%;
+    margin: 4%;
+    display: flex;
+    justify-content: center;
+}
+
+.team-image img {
+    position: absolute;
+    width: auto;
+    height: 100%;
+    filter: grayscale(100%);
+}
+
+.team.checked img {
+    filter: none;
+}
