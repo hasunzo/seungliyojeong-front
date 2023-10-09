@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from "react-slick";
-import RecentGameItem from "./RecentGameItem";
+import RecentGameItem from "./RecentGameItem.js";
 
 const RecentGames = ({ recentGames }) => {
     const settings = {
@@ -15,7 +15,7 @@ const RecentGames = ({ recentGames }) => {
         speed: 500
     };
     return (
-        <Slider {...settings} className="scrollable-list">
+        <Slider {...settings} className="recent-game-list">
             {recentGames.map(recentGame => (
                 <RecentGameItem
                     recentGame={recentGame}

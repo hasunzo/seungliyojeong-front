@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { HiOutlineChevronLeft } from "react-icons/hi";
-import Layout from '../Layout.js'; // Layout 컴포넌트 임포트
+import Layout from '../components/Layout.js'; // Layout 컴포넌트 임포트
 import '../styles/ProfileInputPage.css'
 import { Link } from 'react-router-dom';
 

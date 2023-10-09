@@ -1,6 +1,6 @@
 import React from 'react';
-import './styles/App.css'; // App.css 파일 임포트
-import './styles/FloatingButton.css'
+import '../styles/App.css'; // App.css 파일 임포트
+import '../styles/FloatingButton.css'
 
 const Layout = ({ children }) => {
   return (

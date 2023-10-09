@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import Layout from '../Layout.js'; // Layout 컴포넌트 임포트
+import Layout from '../components/Layout.js'; // Layout 컴포넌트 임포트
 import testImg from '../test.jpg'
 import ob from '../ob.png'
 import '../styles/Home.css'; // Home.css 파일 임포트
-import RecentGames from '../RecentGames.js';
+import RecentGames from '../components/RecentGames.js';
 import WinRateGraph from '../WinRateGraph.js';
-import BottomBar from '../BottomBar.js';
-import HomeLayout from '../HomeLayout.js';
+import BottomBar from '../components/BottomBar.js';
+import HomeLayout from '../components/HomeLayout.js';
 
 const Home = () => {
     const [recentGames, setRecentGames] = useState([

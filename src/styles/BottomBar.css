@@ -20,6 +20,6 @@
 
 @media screen and (min-width: 421px) {
     .menu-bar {
-      position: absolute;
+      width: 420px;
     }
   }

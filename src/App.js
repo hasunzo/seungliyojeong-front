@@ -5,6 +5,7 @@ import TeamSelectionPage from './pages/TeamSelectionPage'; // TeamSelectionPage 
 import ProfileInputPage from './pages/ProfileInputPage'; // ProfileInputPage 컴포넌트 import
 import Home from './pages/Home';
 import RecordPage from './pages/RecordPage';
+import RecordDetailPage from './pages/RecordDetailPage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/profile" element={<ProfileInputPage />} />
         <Route path="/home" element={<Home />} />
         <Route path="/record" element={<RecordPage />}/>
+        <Route path="/record/:id" element={<RecordDetailPage />} />
       </Routes>
     </Router>
   );

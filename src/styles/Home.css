@@ -39,11 +39,11 @@
     margin-bottom: 2rem;
 }
 
-.scrollable-list {
+.recent-game-list {
     gap: 32px; 
 }
 
-.slick-slide {
+.recent-game-list .slick-slide {
     width: auto !important;
     background-color: white;
     border-radius: 10px;
@@ -52,7 +52,7 @@
     margin: 10px;
 }
 
-.slide-content {
+.recent-game-list .slide-content {
     display: flex;
     height: 20rem;
     width: 200px;
@@ -107,7 +107,7 @@
     font-size: 20px;
 }
 
-.slick-list {
+.recent-game-list .slick-list {
     padding: 0% !important;
 }
 

@@ -1,0 +1,36 @@
+.detail-info {
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contents-image {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.slick-dots {
+    bottom: 13px;
+}
+
+.slick-dots li.slick-active button:before {
+    color: white;
+}
+
+.slick-dots li button:hover,
+.slick-dots li button:focus {
+    color: white;
+}
+
+.slick-dots li button:before {
+    color: white;
+}
+
+div:focus {
+    outline: none;
+}
+
+.slick-dots li {
+    margin: 0;
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import './styles/BottomBar.css'
+import '../styles/BottomBar.css'
 import { Link } from 'react-router-dom';
 
 import { HiHome, HiOutlineHome, HiCalendar, HiOutlineCalendar, HiOutlinePlusSm, HiUser } from "react-icons/hi";

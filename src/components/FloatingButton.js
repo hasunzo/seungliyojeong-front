@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import './styles/FloatingButton.css'
+import '../styles/FloatingButton.css'
 
 const FloatingButton = () => {
     const [isVisible, setIsVisible] = useState(false);

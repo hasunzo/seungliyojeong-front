@@ -7,9 +7,9 @@ import sub from '../sub.png'
 
 import { MdUnfoldMore, MdFormatListBulleted } from "react-icons/md"
 import { HiOutlineCalendar } from "react-icons/hi";
-import CalendarView from "../CalendarView";
-import ListView from "../ListView";
-import HomeLayout from "../HomeLayout";
+import CalendarView from "../components/CalendarView.js";
+import ListView from "../components/ListView.js";
+import HomeLayout from "../components/HomeLayout.js";
 
 const RecordPage = () => {
     const [records, setRecords] = useState([
@@ -109,6 +109,38 @@ const RecordPage = () => {
             createTime: "2023.09.18",
         }
     ])
+
+    const mockCalendarData = [
+        // 각 요소는 날짜, 경기 정보, 기록 여부를 가집니다.
+        {
+          date: '2023-09-01',
+          game: {
+            opponentTeamName: 'LG',
+            opponentTeamScore: 4,
+            opponentTeamImg: 'img.png',
+            myTeamScore: 2,
+            result: 'WIN',
+            resultMsg: '승',
+            stadium: '잠실',
+          },
+          recorded: true,
+        },
+        {
+          date: '2023-09-02',
+          game: {
+            opponentTeamName: 'KT',
+            opponentTeamScore: 3,
+            opponentTeamImg: 'img.png',
+            myTeamScore: 3,
+            result: null,
+            resultMsg: null,
+            stadium: '대전',
+          },
+          recorded: false,
+        },
+        // ...
+      ];
+
     const [isCalendarView, setIsCalendarView] = useState(true);
 
     const toggleView = () => {
@@ -119,23 +151,22 @@ const RecordPage = () => {
         <HomeLayout>
             <div className="records-bar">
                 <div className="records-month">
-                    2023년 09월 <MdUnfoldMore />
+                    2023년 09월 <MdUnfoldMore className="custom-icon" />
                 </div>
                 <div className="view-toggle" onClick={toggleView}>
                     {isCalendarView ? (
                         <span role="img" aria-label="리스트 아이콘">
-                            <MdFormatListBulleted />
+                            <MdFormatListBulleted className="custom-icon"/>
                         </span>
                     ) : (
                         <span role="img" aria-label="달력 아이콘">
-                            <HiOutlineCalendar />
+                            <HiOutlineCalendar className="custom-icon"/>
                         </span>
                     )}
                 </div>
             </div>
             <div className={`content ${isCalendarView ? 'calendar-view' : 'list-view'}`}>
-                {/* 여기에 컨텐츠를 표시하는 컴포넌트를 추가하세요. */}
-                {isCalendarView ? <CalendarView /> : <ListView records={records} />}
+                {isCalendarView ? <CalendarView calendarData={mockCalendarData} /> : <ListView records={records} />}
             </div>
         </HomeLayout>
     )
