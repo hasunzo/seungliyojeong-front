@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from "react-slick";
@@ -19,6 +19,7 @@ import RecordInfo from "../components/RecordInfo";
 const RecordDetailPage = () => {
     const { id } = useParams(); // URL에서 레코드 ID 파라미터 추출
     const navigate = useNavigate();
+    const [isMenuVisible, setIsMenuVisible] = useState(false); // 메뉴 보이기 여부 상태
 
     const handleGoBack = () => {
         navigate(-1); // 뒤로가기
@@ -56,6 +57,21 @@ const RecordDetailPage = () => {
         initialSlide: 0
     };
 
+    const handleMenuClick = () => {
+        // 메뉴 보이기 여부를 토글
+        setIsMenuVisible(!isMenuVisible);
+    };
+
+    const handleDelete = () => {
+        // 삭제 로직을 구현하세요.
+        alert("삭제하기 기능이 실행됩니다.");
+      };
+    
+      const handleEdit = () => {
+        // 수정 로직을 구현하세요.
+        alert("수정하기 기능이 실행됩니다.");
+      };
+
     return (
         <HomeLayout>
             <div className="records-bar">
@@ -63,7 +79,19 @@ const RecordDetailPage = () => {
                 <div className="records-month">
                     2023.09.17 일
                 </div>
-                <HiDotsVertical className="custom-icon" />
+                <div>
+                    {/* HiDotsVertical 아이콘을 클릭했을 때 메뉴 보이기/숨기기 */}
+                    <HiDotsVertical className="custom-icon" onClick={handleMenuClick} />
+
+                    {/* 메뉴를 보일지 여부를 검사하고 렌더링 */}
+                    {isMenuVisible && (
+                        <div className="menu">
+                            {/* 여기에 삭제하기와 수정하기 메뉴 컴포넌트를 추가하세요 */}
+                            <button onClick={handleDelete}>삭제하기</button>
+                            <button onClick={handleEdit}>수정하기</button>
+                        </div>
+                    )}
+                </div>
             </div>
             <div className="detail-info">
                 <RecordInfo
