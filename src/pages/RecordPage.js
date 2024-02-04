@@ -12,6 +12,12 @@ import ListView from "../components/ListView.js";
 import HomeLayout from "../components/HomeLayout.js";
 
 const RecordPage = () => {
+    // 현재 날짜 정보 가져오기
+    const currentDate = new Date();
+    const currentYear = currentDate.getFullYear();
+    const currentMonth = currentDate.getMonth() + 1; // 월은 0부터 시작하므로 +1을 해줍니다.
+    const formattedCurrentDate = `${currentYear}년 ${currentMonth < 10 ? '0' + currentMonth : currentMonth}월`;
+
     const [records, setRecords] = useState([
         {
             id: 1,
@@ -113,33 +119,33 @@ const RecordPage = () => {
     const mockCalendarData = [
         // 각 요소는 날짜, 경기 정보, 기록 여부를 가집니다.
         {
-          date: '2023-09-01',
-          game: {
-            opponentTeamName: 'LG',
-            opponentTeamScore: 4,
-            opponentTeamImg: 'img.png',
-            myTeamScore: 2,
-            result: 'WIN',
-            resultMsg: '승',
-            stadium: '잠실',
-          },
-          recorded: true,
+            date: '2023-09-01',
+            game: {
+                opponentTeamName: 'LG',
+                opponentTeamScore: 4,
+                opponentTeamImg: 'img.png',
+                myTeamScore: 2,
+                result: 'WIN',
+                resultMsg: '승',
+                stadium: '잠실',
+            },
+            recorded: true,
         },
         {
-          date: '2023-09-02',
-          game: {
-            opponentTeamName: 'KT',
-            opponentTeamScore: 3,
-            opponentTeamImg: 'img.png',
-            myTeamScore: 3,
-            result: null,
-            resultMsg: null,
-            stadium: '대전',
-          },
-          recorded: false,
+            date: '2023-09-02',
+            game: {
+                opponentTeamName: 'KT',
+                opponentTeamScore: 3,
+                opponentTeamImg: 'img.png',
+                myTeamScore: 3,
+                result: null,
+                resultMsg: null,
+                stadium: '대전',
+            },
+            recorded: false,
         },
         // ...
-      ];
+    ];
 
     const [isCalendarView, setIsCalendarView] = useState(true);
 
@@ -151,22 +157,22 @@ const RecordPage = () => {
         <HomeLayout>
             <div className="records-bar">
                 <div className="records-month">
-                    2023년 09월 <MdUnfoldMore className="custom-icon" />
+                    {formattedCurrentDate} <MdUnfoldMore className="custom-icon" />
                 </div>
                 <div className="view-toggle" onClick={toggleView}>
                     {isCalendarView ? (
                         <span role="img" aria-label="리스트 아이콘">
-                            <MdFormatListBulleted className="custom-icon"/>
+                            <MdFormatListBulleted className="custom-icon" />
                         </span>
                     ) : (
                         <span role="img" aria-label="달력 아이콘">
-                            <HiOutlineCalendar className="custom-icon"/>
+                            <HiOutlineCalendar className="custom-icon" />
                         </span>
                     )}
                 </div>
             </div>
             <div className={`content ${isCalendarView ? 'calendar-view' : 'list-view'}`}>
-                {isCalendarView ? <CalendarView calendarData={mockCalendarData} /> : <ListView records={records} />}
+                {isCalendarView ? <CalendarView calendarData={mockCalendarData} year={currentYear} month={currentMonth}/> : <ListView records={records} />}
             </div>
         </HomeLayout>
     )

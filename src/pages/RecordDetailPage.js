@@ -13,19 +13,20 @@ import '../styles/RecordPage.css'
 import '../styles/RecordDetailPage.css'
 import HomeLayout from "../components/HomeLayout";
 
-import { HiOutlineChevronLeft, HiDotsVertical } from "react-icons/hi";
+import { HiOutlineChevronLeft, HiDotsVertical, HiOutlineTrash, HiOutlinePencilAlt } from "react-icons/hi";
 import RecordInfo from "../components/RecordInfo";
 
 const RecordDetailPage = () => {
     const { id } = useParams(); // URL에서 레코드 ID 파라미터 추출
     const navigate = useNavigate();
     const [isMenuVisible, setIsMenuVisible] = useState(false); // 메뉴 보이기 여부 상태
+    const [isEditMode, setIsEditMode] = useState(false); // 수정하기 모드 상태
 
     const handleGoBack = () => {
         navigate(-1); // 뒤로가기
     };
 
-    const record = {
+    const [record, setRecord] = useState({
         id: 1,
         gameDate: "2023.09.17 일",
         homeTeamCode: "OB",
@@ -43,7 +44,7 @@ const RecordDetailPage = () => {
         thumbnail: sub,
         contents: "23년 첫 직관우승.. 약속의 8회 믿고 있었다고,,, 근데 오늘 일케 점수내면 낼은 .. 내일도 점수 내줄꺼지,,,? 3연승 ㄱㅂㅈㄱ",
         createTime: "2023.09.18",
-    }
+    })
 
     const settings = {
         dots: true,
@@ -65,12 +66,15 @@ const RecordDetailPage = () => {
     const handleDelete = () => {
         // 삭제 로직을 구현하세요.
         alert("삭제하기 기능이 실행됩니다.");
-      };
-    
-      const handleEdit = () => {
-        // 수정 로직을 구현하세요.
-        alert("수정하기 기능이 실행됩니다.");
-      };
+    };
+
+    const handleEdit = () => {
+        setIsEditMode(!isEditMode);
+    };
+
+    const handleContentChange = (e) => {
+        setRecord({ ...record, contents: e.target.value });
+    };
 
     return (
         <HomeLayout>
@@ -86,9 +90,10 @@ const RecordDetailPage = () => {
                     {/* 메뉴를 보일지 여부를 검사하고 렌더링 */}
                     {isMenuVisible && (
                         <div className="menu">
-                            {/* 여기에 삭제하기와 수정하기 메뉴 컴포넌트를 추가하세요 */}
-                            <button onClick={handleDelete}>삭제하기</button>
-                            <button onClick={handleEdit}>수정하기</button>
+                            <ul className="menu-list">
+                                <li onClick={handleEdit}>수정</li>
+                                <li onClick={handleDelete} className="font-red">삭제</li>
+                            </ul>
                         </div>
                     )}
                 </div>
@@ -117,7 +122,15 @@ const RecordDetailPage = () => {
                     </Slider>
                 </div>
                 <div className="contents">
-                    {record.contents}
+                    {isEditMode ? (
+                        <textarea
+                            className="contents-edit-mode"
+                            defaultValue={record.contents}
+                            onChange={handleContentChange}
+                        ></textarea>
+                    ) : (
+                        <div className="contents-text">{record.contents}</div>
+                    )}
                 </div>
             </div>
         </HomeLayout>

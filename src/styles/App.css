@@ -82,3 +82,11 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+.font-red {
+  color: red;
+}
+
+.font-blue {
+  color: blue;
+}
